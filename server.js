@@ -2,9 +2,11 @@ const express=require('express');
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const app=express();
-
+const connectDB=require('./server/database/connection');
 app.use(express.static("public"));
 app.set('view engine','ejs');
+//mongodb connection
+connectDB();
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/',(req,res)=>{
