@@ -30,11 +30,11 @@
                     <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
                   </div>
   
-                  <form>
+                  <form action="/api/users" method="post" id="login">
                     <p>Please login to your account</p>
   
                     <div class="form-outline mb-4">
-                      <input type="email" id="form2Example11" class="form-control"
+                      <input type="name" id="form2Example11" class="form-control"
                         placeholder="Phone number or email address" />
                       <label class="form-label" for="form2Example11">Username</label>
                     </div>
@@ -45,7 +45,7 @@
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
-                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log
+                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log
                         in</button>
                       <a class="text-muted" href="#!">Forgot password?</a>
                     </div>
@@ -54,7 +54,7 @@
                       <p class="mb-0 me-2">Don't have an account?</p>
                       <button type="button" class="btn btn-outline-danger">Create new</button>
                     </div>
-  
+                  
                   </form>
   
                 </div>
@@ -71,5 +71,7 @@
       </div>
     </div>
   </section>
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script src="/assets/js/index.js"></script>
 </body>
 </html>
