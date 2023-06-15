@@ -3,12 +3,12 @@ var schema=new mongoose.Schema({
     Username:{
         type:String,
         unique:true,
-        required:true
+       
     },
     Password:{
         type:String,
         unique:true,
-        required:true
+       
     }
    
 })

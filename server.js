@@ -9,8 +9,11 @@ app.use(express.static("public"));
 app.set('view engine','ejs');
 //mongodb connection
 connectDB();
-app.use(bodyParser.urlencoded({extended: true}));
-
+app.use(
+    express.urlencoded({ extended: true })
+);
+    
+app.use(express.json());
 app.get('/',(req,res)=>{
     res.render("index");
 })
@@ -26,6 +29,10 @@ app.get("/signup", function(req, res){
 app.get("/NGOsignup", function(req, res){
     res.render("NGOsignup");
 })
+app.get('/api/users',function(req,res){
+    res.render('index',{users:response.data});
+})
+
 /*
 app.post("/login",async(req,res)=>{
     res.render("login");

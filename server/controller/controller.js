@@ -17,7 +17,7 @@ exports.create=(req,res)=>{
     user
     .save(user)
     .then(data=>{
-     res.redirect('/views/login.ejs');
+     res.redirect('/login');
     })
     .catch(err=>{
         res.status(500).send({
