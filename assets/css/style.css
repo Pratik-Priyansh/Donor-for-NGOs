@@ -15,3 +15,38 @@
     border-bottom-right-radius: .3rem;
     }
     }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      header {
+        background-color: #f8f8f8;
+        text-align: center;
+        padding: 40px 0;
+      }
+      
+      header h1 {
+        color: #333;
+        font-size: 32px;
+      }
+      
+      header p {
+        color: #777;
+        font-size: 16px;
+      }
+      
+      main {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+      }
+      
+      .donation-form {
+        flex: 1;
+        margin-right: 40px;
+      }
+      
+      
+      
