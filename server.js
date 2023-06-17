@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const Donordb = require("./server/model/model");
+const NGOdb = require("./server/model/model");
+
 const path = require("path");
 const app = express();
 const connectDB = require("./server/database/connection");
@@ -56,6 +58,26 @@ app.post("/api/users", async (req, res) => {
     res.send("Username doesn't exist");
   }
 });
+
+
+
+
+
+
+  app.post("/api/ngos", async (req, res) => {
+    const { username, password } = req.body;
+    const foundngo = (await NGOdb.find({ Username: username }))[0];
+    console.log(foundngo);
+    if (foundngo) {
+      if (foundngo.Password === password) {
+        res.redirect("../home");
+      } else {
+        res.send("Wrong password");
+      }
+    } else {
+      res.send("Username doesn't exist");
+    }
+  });
 /*
 
 app.post("/NGOlogin", async(req, res)=>{
