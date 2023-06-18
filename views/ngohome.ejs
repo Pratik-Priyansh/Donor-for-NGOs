@@ -1,80 +1,100 @@
 <!DOCTYPE html>
 <html>
- 
-  <!-- Google Fonts -->
-  
-  <!-- MDB -->
-  
-  <link rel="stylesheet" href="../assets/css/style.css">
 <head>
-  <title>Donation Page</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>NGO Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .search-bar {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    
+    .search-bar input[type="text"] {
+      flex-grow: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+    }
+    
+    .search-bar button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .search-results {
+      margin-top: 20px;
+    }
+    
+    .search-results h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .search-results ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .search-results li {
+      margin-bottom: 5px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Donate Clothes and Unused Items</h1>
-    <p>Make a difference by donating your clothes and unused items to those in need.</p>
-  </header>
-  
-  <main>
-    <div class="donation-form">
-      <h2>Donation Details</h2>
-      
-      <form action="/donate" method="POST" onsubmit="submitForm(event)">
-        <div class="form-group">
-          <label for="itemType">Item Type:</label>
-          <select name="itemType" id="itemType">
-            <option value="clothes">Clothes</option>
-            <option value="unusedItems">Unused Items</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="itemName">Item Name:</label>
-          <input type="text" name="itemName" id="itemName" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="description">Description:</label>
-          <textarea name="description" id="description" rows="4" required></textarea>
-        </div>
-        
-        <div class="form-group">
-          <label for="contactName">Contact Name:</label>
-          <input type="text" name="contactName" id="contactName" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="phone">Phone:</label>
-          <input type="tel" name="phone" id="phone" required>
-        </div>
-        
-        <div class="form-group">
-          <input type="submit" value="Donate" class="btn-donate">
-        </div>
-      </form>
+  <div class="container">
+    <h1>NGO Website</h1>
+    
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search for items or donor locations">
+      <button onclick="search()">Search</button>
     </div>
     
-    <div class="donation-info">
-      <h2>Why Donate?</h2>
-      <p>By donating your clothes and unused items, you can:</p>
-      <ul>
-        <li>Help those in need</li>
-        <li>Reduce waste and promote sustainability</li>
-        <li>Create a positive impact in your community</li>
+    <div class="search-results">
+      <h3>Search Results:</h3>
+      <ul id="results-list">
+        <!-- Search results will be dynamically added here -->
       </ul>
     </div>
-  </main>
+  </div>
   
-  <footer>
-    <p>© 2023 Your Donor Website. All rights reserved.</p>
-  </footer>
-  
-  <script src="script.js"></script>
+  <script>
+    function search() {
+      var input = document.getElementById('search-input').value;
+      
+      // Perform search logic here
+      // You can use JavaScript or make an API request to retrieve data
+      
+      // Example code to add search results dynamically
+      var resultsList = document.getElementById('results-list');
+      resultsList.innerHTML = ''; // Clear previous results
+      
+      var results = ['Item 1', 'Item 2', 'Item 3']; // Example search results
+      
+      results.forEach(function(result) {
+        var li = document.createElement('li');
+        li.textContent = result;
+        resultsList.appendChild(li);
+      });
+    }
+  </script>
 </body>
 </html>
+
+
+
+
+
+

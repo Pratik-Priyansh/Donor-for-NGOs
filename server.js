@@ -110,11 +110,10 @@ app.post("/signup", function(req, res){
         res.redirect("/home");
       })
     }
-  } else {
-    res.send("Username doesn't exist");
-  }
+  } 
+  })
 });
-/*
+
 
 app.post("/NGOsignup", function(req, res){
   NGO.register({username: req.body.username}, req.body.password, function(err, user){
