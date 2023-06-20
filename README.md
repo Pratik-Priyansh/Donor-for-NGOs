@@ -20,7 +20,7 @@ CSS: Employed for styling the website and enhancing the user interface.
 Bootstrap: Utilized for responsive design and pre-designed UI components.
 JavaScript: Implemented for interactive features and dynamic functionality.
 Nodejs: A JavaScript runtime used for server-side scripting.
-Expressjs: A web application framework for Node.js, providing robust routing and middleware capabilities.
+Expressjs: A web application framework for Nodejs, providing robust routing and middleware capabilities.
 Mongoose: An Object Data Modeling (ODM) library for MongoDB and Nodejs, facilitating the interaction with the database.
 Authentication: Integrated authentication mechanisms to secure user accounts and data.
 added .gitignore
