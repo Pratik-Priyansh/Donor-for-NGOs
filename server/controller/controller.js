@@ -1,5 +1,5 @@
-var Donordb=require('../model/model');
-var NGOdb=require('../model/model');
+var Donordb=require('../model/donor');
+var NGOdb=require('../model/ngo');
 // create and save new user
 exports.create=(req,res)=>{
     //validate user
