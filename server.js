@@ -100,7 +100,7 @@ app.get("/home", async (req, res) => {
 });
 
 app.post("/signup", function(req, res){
-  User.register ({username: req.body.username}, req.body.password, function(err, user){
+  User.register({username: req.body.username}, req.body.password, function(err, user){
     if(err){
       console.log(err);
       res.redirect("/signup");
@@ -110,10 +110,23 @@ app.post("/signup", function(req, res){
         res.redirect("/home");
       })
     }
-  } 
   })
-});
+})
 
+app.post("/login", function(req, res){
+  const user = new User({
+    username: req.body.username,
+    password: req.body.password
+  })
+  req.login(user, function(err) {
+    if (err) { console.log(err); }
+    else{
+      passport.authenticate("local")(req,res,function(){
+        res.redirect("/home");
+      })
+    }
+  });
+})
 
 app.post("/NGOsignup", function(req, res){
   NGO.register({username: req.body.username}, req.body.password, function(err, user){
@@ -123,7 +136,7 @@ app.post("/NGOsignup", function(req, res){
     }
     else{
       passport.authenticate("local")(req,res,function(){
-        res.redirect("/home");
+        res.redirect("/ngohome");
       })
     }
   })
@@ -138,7 +151,7 @@ app.post("/NGOlogin", function(req, res){
     if (err) { console.log(err); }
     else{
       passport.authenticate("local")(req,res,function(){
-        res.redirect("/home");
+        res.redirect("/ngohome");
       })
     }
   });
