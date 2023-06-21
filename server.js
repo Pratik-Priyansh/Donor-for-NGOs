@@ -1,11 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-const Donordb = require("./server/model/model");
-const NGOdb = require("./server/model/model");
+const mongoose = require("mongoose");
+const Donordb = require("./server/model/donor");
+const NGOdb = require("./server/model/ngo");
 
 const path = require("path");
-const mongoose = require("mongoose");
+
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
